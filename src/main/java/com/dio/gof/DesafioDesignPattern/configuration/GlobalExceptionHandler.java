@@ -1,6 +1,5 @@
 package com.dio.gof.DesafioDesignPattern.configuration;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,7 +13,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResponseStatusException.class)
     public ResponseEntity<Object> handleResponseStatusException(ResponseStatusException ex) {
         return ResponseEntity
-                .status((HttpStatus) ex.getStatusCode())
+                .status(ex.getStatusCode())
                 .body(Map.of("error", Objects.requireNonNull(ex.getReason())));
     }
 }
