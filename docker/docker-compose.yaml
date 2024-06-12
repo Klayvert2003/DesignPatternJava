@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: gofapi
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - db
+  db:
+    image: postgres
+    container_name: gofdatabase
+    environment:
+      POSTGRES_DB: gofdb
+      POSTGRES_PASSWORD: postgres
+    restart: always
+    ports:
+      - "5432:5432"

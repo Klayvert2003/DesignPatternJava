@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: DesafioDesignPattern
+
+  profiles:
+    active: dev
