@@ -3,4 +3,4 @@ spring:
     name: DesafioDesignPattern
 
   profiles:
-    active: dev
+    active: prd

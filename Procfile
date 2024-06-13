@@ -1,0 +1,1 @@
+web: java -jar target/DesafioDesignPattern-1.0.jar
